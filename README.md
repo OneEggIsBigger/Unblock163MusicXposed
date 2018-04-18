@@ -5,7 +5,7 @@ Xposed version of EraserKing's [Unblock163MusicClient](https://github.com/Eraser
 Compatible with app v3/v4.
 
 
-## ThanksThanksThanksThanks
+## Thanks
 
 Thanks EraserKing for his Original Windows version [https://github.com/EraserKing/Unblock163MusicClient]
 
