@@ -10,7 +10,7 @@ import de.robv.android.xposed.XC_MethodHook;
 
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 
-public class RemoveUpdate extends Hooker {
+public class RemoveSplashAd extends Hooker {
 
     @Override
     protected void howToHook() throws PackageManager.NameNotFoundException, IllegalAccessException {

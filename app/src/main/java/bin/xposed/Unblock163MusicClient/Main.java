@@ -13,7 +13,7 @@ import bin.xposed.Unblock163MusicClient.hooker.Gray;
 import bin.xposed.Unblock163MusicClient.hooker.HttpFor3rd;
 import bin.xposed.Unblock163MusicClient.hooker.Oversea;
 import bin.xposed.Unblock163MusicClient.hooker.QualityBox;
-import bin.xposed.Unblock163MusicClient.hooker.RemoveUpdate;
+import bin.xposed.Unblock163MusicClient.hooker.RemoveSplashAd;
 import bin.xposed.Unblock163MusicClient.hooker.TipsFor3rd;
 import bin.xposed.Unblock163MusicClient.ui.SettingsActivity;
 import de.robv.android.xposed.IXposedHookLoadPackage;
@@ -66,7 +66,7 @@ public class Main implements IXposedHookLoadPackage {
                         list.add(new Dislike());
                     }
                     if (Settings.isRemoveUpdate()) {
-                        list.add(new RemoveUpdate());
+                        list.add(new RemoveSplashAd());
                     }
 
                     for (Hooker hooker : list) {
