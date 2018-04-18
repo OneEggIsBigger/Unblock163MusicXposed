@@ -1,0 +1,11 @@
+/app/build
+/app/src/main/java/bin/xposed/Unblock163MusicClient/note
+/gradle.properties
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
