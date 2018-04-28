@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">音量增强器</string>
+    <string name="app_name">网易云音乐+</string>
     <string name="xposed_description">仅供测试</string>
     <string name="ok">确定</string>
     <string name="cancel">取消</string>

@@ -764,4 +764,14 @@ public class CloudMusicPackage {
             return clazz;
         }
     }
+    public static class LoadAdActivity {
+        private static Class clazz;
+
+        public static Class getClazz() {
+            if (clazz == null) {
+                clazz = findClass("com.netease.cloudmusic.activity.LoadingAdActivity", classLoader);
+            }
+            return clazz;
+        }
+    }
 }

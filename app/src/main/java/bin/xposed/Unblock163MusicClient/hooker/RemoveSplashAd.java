@@ -1,12 +1,11 @@
 package bin.xposed.Unblock163MusicClient.hooker;
 
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 
 import bin.xposed.Unblock163MusicClient.CloudMusicPackage;
 import bin.xposed.Unblock163MusicClient.Hooker;
 import bin.xposed.Unblock163MusicClient.Settings;
-import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XC_MethodReplacement;
 
 import static de.robv.android.xposed.XposedHelpers.findAndHookMethod;
 
@@ -15,20 +14,20 @@ public class RemoveSplashAd extends Hooker {
     @Override
     protected void howToHook() throws PackageManager.NameNotFoundException, IllegalAccessException {
         if (Settings.isRemoveUpdate()) {
-
-            findAndHookMethod(CloudMusicPackage.LoadActivity.getClazz(), "onCreate", "android.os.Bundle", new XC_MethodHook() {
+            findAndHookMethod(CloudMusicPackage.LoadActivity.getClazz(), "a", "com.netease.cloudmusic.module.ad.meta.AdInfo", "int", new XC_MethodReplacement() {
                 @Override
-                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                    SharedPreferences sharedPreferences = CloudMusicPackage.getContext().getSharedPreferences("com.netease.cloudmusic.preferences", 0);
-                    sharedPreferences.edit().putBoolean("firstOpenApp", true).commit();
-                }
-
-                @Override
-                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    SharedPreferences sharedPreferences = CloudMusicPackage.getContext().getSharedPreferences("com.netease.cloudmusic.preferences", 0);
-                    sharedPreferences.edit().putBoolean("firstOpenApp", false).commit();
+                protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
+                    return null;
                 }
             });
+
+            findAndHookMethod(CloudMusicPackage.LoadAdActivity.getClazz(), "a", "android.content.Context", "com.netease.cloudmusic.module.ad.meta.AdInfo", "int", new XC_MethodReplacement() {
+                @Override
+                protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
+                    return null;
+                }
+            });
+
 
         }
     }
